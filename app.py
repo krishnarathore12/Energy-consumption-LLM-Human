@@ -1,9 +1,4 @@
 import streamlit as st
-import nltk
-from nltk.tokenize import word_tokenize
-
-# Ensure necessary NLTK data is available
-nltk.download('punkt', quiet=True)
 
 # Function for energy comparison
 def calculate_energy_comparison(text):
@@ -29,7 +24,7 @@ def calculate_energy_comparison(text):
     joules_to_kwh = 2.77778e-7  # 1 Joule = 2.77778e-7 kWh
 
     # --- Calculations ---
-    num_words = len(word_tokenize(text))
+    num_words = len(text.split())
     num_tokens = num_words / words_per_token
 
     # Human Time
